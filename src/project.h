@@ -50,3 +50,9 @@ T1 __max(T1 a, T2 b)
 }
 
 #endif
+
+#ifdef _MSC_VER
+//not #if defined(_WIN32) || defined(_WIN64) because we have strncasecmp in mingw
+#define strncasecmp _strnicmp
+#define strcasecmp _stricmp
+#endif
